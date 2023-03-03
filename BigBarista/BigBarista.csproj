@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>0.0.0.2</Version>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\cowstuff.targets" />
+</Project>
