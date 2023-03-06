@@ -10,7 +10,11 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
+using UnityEngine.UI;
 
+
+// IF YOU ARE READING THIS: THIS IS PROBABLY A TERRIBLE WAY TO IMPLIMENT HOTKEYS.
+// IF YOU CAN MAKE IT BETTER, FEEL FREE.
 namespace HotKey
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERS)]
@@ -72,6 +76,10 @@ namespace HotKey
         public static ConfigEntry<string> confighotkeySprinklers;
         public static ConfigEntry<string> confighotkeyCaramelsauce;
         public static ConfigEntry<string> confighotkeyChocolateSauce;
+        public static ConfigEntry<string> confighotkeyreset;
+        public static ConfigEntry<string> confighotkeysubmit;
+        public static ConfigEntry<string> Confighotkeymilking;
+
 
         private void Awake()
         {
@@ -79,7 +87,7 @@ namespace HotKey
             Logger.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-            //SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+            SceneManager.sceneLoaded += SceneManager_sceneLoaded;
 
             // Set up configs
             confighotkeyMilk = Config.Bind("Hotkeys", "hotkeyMilk", "z", "Hotkey to add milk to cup");
@@ -95,6 +103,14 @@ namespace HotKey
             confighotkeySprinklers = Config.Bind("Hotkeys", "hotkeySprinklers", "w", "Hotkey to add Sprinklers to cup");
             confighotkeyCaramelsauce = Config.Bind("Hotkeys", "hotkeyCaramelsauce", "e", "Hotkey to add Caramelsauce to cup");
             confighotkeyChocolateSauce = Config.Bind("Hotkeys", "hotkeyChocolateSauce", "r", "Hotkey to add ChocolateSauce to cup");
+
+
+            //https://answers.unity.com/questions/762073/c-list-of-string-name-for-inputgetkeystring-name.html
+            confighotkeyreset = Config.Bind("Hotkeys", "hotkeyreset", "left ctrl", "Hotkey to reset cup");
+            confighotkeysubmit = Config.Bind("Hotkeys", "hotkeysubmit", "space", "Hotkey to submit order");
+            Confighotkeymilking = Config.Bind("Hotkeys", "hotkeymilking", "left shift", "Hotkey to milk Barista");
+
+
 
             // set keys to hotkeys in dictionary
 
@@ -138,214 +154,83 @@ namespace HotKey
 
         private Dictionary<char, bool> isfilling = new Dictionary<char, bool>();
 
+        private OrderManager ordermanager;
+        static private Button resetbutton;
+        private BaristaTalkManager dialogmanager;
+        private BaristaMilkingHelper baristamilkinghelper;
+
         private void OnDestroy()
         {
             Dbgl("Destroying plugin");
         }
 
-        public static bool ispressed = false;
-
-        //private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
-        //{
-        //    if (!arg0.name.Contains("MainMenu"))
-        //    {
-        //        /*
-        //        //get unlocks
-        //        unlockedMilk = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Milk/Image Locked").activeSelf;
-        //        unlockedCream = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Cream/Image Locked").activeSelf;
-        //        unlockedWhippedCream = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/WhipedCream/Image Locked").activeSelf;
-        //        unlockedIce = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Ice/Image Locked").activeSelf;
-        //        unlockedCoffee = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Coffee/Image Locked").activeSelf;
-        //        unlockedTea = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Tea/Image Locked").activeSelf;
-        //        unlockedEspresso = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Espresso/Image Locked").activeSelf;
-        //        unlockedSugar = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sugar/Image Locked").activeSelf;
-        //        unlockedChocolate = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Chocolate/Image Locked").activeSelf;
-        //        unlockedBoba = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Boba/Image Locked").activeSelf;
-        //        unlockedSprinklers = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sprinklers/Image Locked").activeSelf;
-        //        unlockedCaramelsauce = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Caramelsauce/Image Locked").activeSelf;
-        //        unlockedChocolateSauce = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/ChocolateSauce/Image Locked").activeSelf;
-        //        gotunlocks = true;
-
-        //        //Get sounds
-        //        soundMilk = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Milk").GetComponent<SoundEffectVariation>();
-        //        soundCream = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Cream").GetComponent<SoundEffectVariation>();
-        //        soundWhippedCream = GameObject.Find("Cafe Visuals/Canvas Shelf Right/WhipedCream").GetComponent<SoundEffectVariation>();
-        //        soundIce = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Ice").GetComponent<SoundEffectVariation>();
-        //        soundCoffee = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Coffee").GetComponent<SoundEffectVariation>();
-        //        soundTea = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Tea").GetComponent<SoundEffectVariation>();
-        //        soundEspresso = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Espresso").GetComponent<SoundEffectVariation>();
-        //        soundSugar = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sugar").GetComponent<SoundEffectVariation>();
-        //        soundChocolate = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Chocolate").GetComponent<SoundEffectVariation>();
-        //        soundBoba = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Boba").GetComponent<SoundEffectVariation>();
-        //        soundSprinklers = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sprinklers").GetComponent<SoundEffectVariation>();
-        //        soundCaramelsauce = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Caramelsauce").GetComponent<SoundEffectVariation>();
-        //        soundChocolateSauce = GameObject.Find("Cafe Visuals/Canvas Shelf Right/ChocolateSauce").GetComponent<SoundEffectVariation>();
-        //        */
-        //        // Get GameManager
-
-        //    }
-        //}
-
-        private void Start()
+        //Inefficent Function from 
+        //https://forum.unity.com/threads/is-there-no-way-to-get-reference-of-inactive-gameobject.472851/#post-4900355
+        private Button FindInActiveObjectByName(string name)
         {
-            //GameObject.Find("Cafe Visuals/Canvas Shelf Right/Canvas Shelf Right/");
-
+            Button[] objs = Resources.FindObjectsOfTypeAll<Button>() as Button[];
+            foreach (Button i in objs)
+            {
+                if (i.name == name)
+                    return i;
+            }
+            return null;
         }
 
-        //public void  cupconfill (Fillings filling)
-        //{
-        //    gamecupcontroller.FillCup(filling);
-        //}
-
-        /*private void Update()
+        private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
-            if (!gotcupcontroller)
+            if (!arg0.name.Contains("MainMenu"))
             {
-                Dbgl($"ERROR: CupController not grabbed", true, false);
-                return;
-            }
-            if (!gotunlocks)
-            {
-                Dbgl($"ERROR: unlocks not grabbed", true, false);
-                return;
-            }
-            if (Input.GetKey("j"))
-            {
+                ordermanager = GameObject.FindObjectOfType<OrderManager>(); Dbgl("OrderManager");
+                dialogmanager = GameObject.Find("Canvas Dialog").GetComponent<BaristaTalkManager>();
+                baristamilkinghelper = GameObject.Find("Sphere").GetComponent<BaristaMilkingHelper>();
 
-            }
-        }*/
-            //char keypressed;
-            //this is where the actual key stuff happens
-            //Milk              z f4
-            //Cream             x f6
-            //WhippedCream      c
-            //Ice               v
-            //Coffee            a f1
-            //Tea               s f3
-            //Espresso          d f0
-            //Sugar             f f7
-            //Chocolate         g f2
-            //Boba              q
-            //Sprinklers        w
-            //Caramelsauce      e
-            //ChocolateSauce    r
-            //BreastMilk    shift f5
+                resetbutton = FindInActiveObjectByName("Button Reset Cup");
 
-            //Needs optimizations
+                sceneready = true;
 
-
-
-
-            // TODO: Add stop noises
-            /*
-                        if (Input.GetKeyUp)
-                        {
-                        }*/
-
-            /*
-            if (!currentkey.Equals(""))
-            {
-                if (Input.GetKeyUp(currentkey))
-                {
-                    currentsound.EndLoop();
-                    currentkey = "";
-                }
-                else
-                {
-                    gamecupcontroller.FillCup(currentfill);
-                    return;
-                }
-            }
-
-            if (!Input.anyKey)
-                return;
-            if (Input.GetKeyDown(confighotkeyMilk.Value) && unlockedMilk)
-            {
-                gamecupcontroller.FillCup(Fillings.Milk);
-                soundMilk.PlayRandomLoop();
-                return;
-            }
-            if (Input.GetKey(confighotkeyCream.Value) && unlockedCream)
-            {
-                gamecupcontroller.FillCup(Fillings.Cream);
-                return;
-            }
-            if (Input.GetKey(confighotkeyCoffee.Value) && unlockedCoffee)
-            {
-                gamecupcontroller.FillCup(Fillings.Coffee);
-                return;
-            }
-            if (Input.GetKey(confighotkeyTea.Value) && unlockedTea)
-            {
-                gamecupcontroller.FillCup(Fillings.Tea);
-                return;
-            }
-            if (Input.GetKey(confighotkeyEspresso.Value) && unlockedEspresso)
-            {
-                gamecupcontroller.FillCup(Fillings.Espresso);
-                return;
-            }
-            if (Input.GetKey(confighotkeySugar.Value) && unlockedSugar)
-            {
-                gamecupcontroller.FillCup(Fillings.Sugar);
-                return;
-            }
-            if (Input.GetKey(confighotkeyChocolate.Value) && unlockedChocolate)
-            {
-                gamecupcontroller.FillCup(Fillings.Chocolate);
-                return;
-            }
-
-            if (Input.GetKey(confighotkeyWhippedCream.Value) && unlockedWhippedCream)
-            {
-
-                gamecupcontroller.FillCup(Toppings.WhipedCream);
-                return;
-            }
-            if (Input.GetKey(confighotkeyIce.Value) && unlockedIce)
-            {
-                GameObject.Find("Cafe Visuals/Canvas Shelf Right/").GetComponentInChildren<SoundEffectVariation>(true);
-                gamecupcontroller.FillCup(Toppings.Ice);
-                return;
-            }
-            if (Input.GetKey(confighotkeyBoba.Value) && unlockedBoba)
-            {
-                gamecupcontroller.FillCup(Toppings.Boba);
-                return;
-            }
-            if (Input.GetKey(confighotkeySprinklers.Value) && unlockedSprinklers)
-            {
-                gamecupcontroller.FillCup(Toppings.Sprinkles);
-                return;
-            }
-            if (Input.GetKey(confighotkeyCaramelsauce.Value) && unlockedCaramelsauce)
-            {
-                gamecupcontroller.FillCup(Toppings.CaramelSauce);
-                return;
-            }
-            if (Input.GetKey(confighotkeyChocolateSauce.Value) && unlockedChocolateSauce)
-            {
-                gamecupcontroller.FillCup(Toppings.ChocolateSauce);
-                return;
-            }*/
-
-            /*
-            if (!Input.anyKeyDown)
-                return;
-            //We are only getting the 1st char detected, for now
-            keypressed = Input.inputString[0];
-            Dbgl($"Keypressed {keypressed}");
-
-            if(isfilling[keypressed])
-            {
-                gamecupcontroller.FillCup(dicf[keypressed]);
             }
             else
-            {
-                gamecupcontroller.FillCup(dict[keypressed]);
-            }*/
+                sceneready = false;
+        }
 
-        static string pressed = "";
+        static bool sceneready = false;
+
+        private bool boolstack = false;
+        private void Update()
+        {
+
+            if (!sceneready)
+                return;
+
+            if (Input.GetKeyDown(KeyCode.Space) && !boolstack)
+            {
+                ordermanager.OrderFinished();
+                boolstack = true;
+                return;
+            }
+            if (Input.GetKeyDown(Confighotkeymilking.Value) && !boolstack)
+            {
+                baristamilkinghelper.Invoke("OnMouseDown",0);
+                boolstack = true;
+                return;
+            }
+
+            if (Input.GetKeyDown(confighotkeyreset.Value) && !boolstack)
+            {
+                //dialogmanager.DoBaristaEventCupReset();
+                //ordermanager.DoResetCup();
+                resetbutton.Invoke("Press",0);
+                boolstack = true;
+                return;
+            }
+            boolstack = false;
+            if (!Input.GetKeyUp(Confighotkeymilking.Value))
+                return;
+            baristamilkinghelper.Invoke("OnMouseUp", 0);
+        }
+
+            static string pressed = "";
 
         [HarmonyPatch(typeof(FillingTool), "Update")]
         static class FillingTool_Patch
@@ -425,7 +310,46 @@ namespace HotKey
 //};
 
 
+        //private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+        //{
+        //    if (!arg0.name.Contains("MainMenu"))
+        //    {
+        //        /*
+        //        //get unlocks
+        //        unlockedMilk = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Milk/Image Locked").activeSelf;
+        //        unlockedCream = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Cream/Image Locked").activeSelf;
+        //        unlockedWhippedCream = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/WhipedCream/Image Locked").activeSelf;
+        //        unlockedIce = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Ice/Image Locked").activeSelf;
+        //        unlockedCoffee = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Coffee/Image Locked").activeSelf;
+        //        unlockedTea = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Tea/Image Locked").activeSelf;
+        //        unlockedEspresso = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Espresso/Image Locked").activeSelf;
+        //        unlockedSugar = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sugar/Image Locked").activeSelf;
+        //        unlockedChocolate = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Chocolate/Image Locked").activeSelf;
+        //        unlockedBoba = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Boba/Image Locked").activeSelf;
+        //        unlockedSprinklers = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sprinklers/Image Locked").activeSelf;
+        //        unlockedCaramelsauce = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/Caramelsauce/Image Locked").activeSelf;
+        //        unlockedChocolateSauce = !GameObject.Find("Cafe Visuals/Canvas Shelf Right/ChocolateSauce/Image Locked").activeSelf;
+        //        gotunlocks = true;
 
+        //        //Get sounds
+        //        soundMilk = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Milk").GetComponent<SoundEffectVariation>();
+        //        soundCream = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Cream").GetComponent<SoundEffectVariation>();
+        //        soundWhippedCream = GameObject.Find("Cafe Visuals/Canvas Shelf Right/WhipedCream").GetComponent<SoundEffectVariation>();
+        //        soundIce = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Ice").GetComponent<SoundEffectVariation>();
+        //        soundCoffee = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Coffee").GetComponent<SoundEffectVariation>();
+        //        soundTea = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Tea").GetComponent<SoundEffectVariation>();
+        //        soundEspresso = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Espresso").GetComponent<SoundEffectVariation>();
+        //        soundSugar = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sugar").GetComponent<SoundEffectVariation>();
+        //        soundChocolate = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Chocolate").GetComponent<SoundEffectVariation>();
+        //        soundBoba = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Boba").GetComponent<SoundEffectVariation>();
+        //        soundSprinklers = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Sprinklers").GetComponent<SoundEffectVariation>();
+        //        soundCaramelsauce = GameObject.Find("Cafe Visuals/Canvas Shelf Right/Caramelsauce").GetComponent<SoundEffectVariation>();
+        //        soundChocolateSauce = GameObject.Find("Cafe Visuals/Canvas Shelf Right/ChocolateSauce").GetComponent<SoundEffectVariation>();
+        //        */
+        //        // Get GameManager
+
+        //    }
+        //}
 
 //[HarmonyPatch(typeof(FillingTool), "Update")]
 //static class FillingTool_Patch
