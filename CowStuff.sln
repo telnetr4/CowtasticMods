@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBarista", "BigBarista\Bi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TASTry", "TASTry\TASTry.csproj", "{FC1B65EB-D02B-4221-8915-CD424A10125C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeyHelper", "HotkeyHelper\HotkeyHelper.csproj", "{57EACD5A-18DF-408E-837D-D7F763D5AE60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotkeyHelper", "HotkeyHelper\HotkeyHelper.csproj", "{57EACD5A-18DF-408E-837D-D7F763D5AE60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CController", "CController\CController.csproj", "{C3DE9727-0810-4B5D-BCEB-676C6D69FABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static String Serializer", "Script Serializer\Static String Serializer.csproj", "{F9A0C270-ADF2-436C-8C9F-BF0B9D4F70A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{57EACD5A-18DF-408E-837D-D7F763D5AE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57EACD5A-18DF-408E-837D-D7F763D5AE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57EACD5A-18DF-408E-837D-D7F763D5AE60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3DE9727-0810-4B5D-BCEB-676C6D69FABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3DE9727-0810-4B5D-BCEB-676C6D69FABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3DE9727-0810-4B5D-BCEB-676C6D69FABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3DE9727-0810-4B5D-BCEB-676C6D69FABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A0C270-ADF2-436C-8C9F-BF0B9D4F70A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A0C270-ADF2-436C-8C9F-BF0B9D4F70A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A0C270-ADF2-436C-8C9F-BF0B9D4F70A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A0C270-ADF2-436C-8C9F-BF0B9D4F70A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

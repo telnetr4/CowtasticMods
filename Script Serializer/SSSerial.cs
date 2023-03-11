@@ -10,12 +10,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
-namespace Script_Serializer
+namespace Static_String_Serializer
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERS)]
     public class BepInExPlugin : BaseUnityPlugin
     {
-        Harmony harmony = new Harmony("my.harmony.id");
+        //Harmony harmony = new Harmony("my.harmony.id");
 
         public static ConfigEntry<bool> isDebug;
 
@@ -25,37 +25,33 @@ namespace Script_Serializer
                 Debug.Log((pref ? typeof(BepInExPlugin).Namespace + " " : "") + str);
         }
 
-        internal const string PLUGIN_GUID = "telnet.Script_Serializer";
-        internal const string PLUGIN_NAME = "Script Serializer";
+        internal const string PLUGIN_GUID = "telnet.Static_String_Serializer";
+        internal const string PLUGIN_NAME = "Static String Serializer";
         internal const string PLUGIN_VERS = "0.0.0.1";
+
+        internal void staticserializer(string stringname)
+        {
+            typeof(Statics).GetProperty("ml");
+        }
 
         internal static BaseGameMode Test;
         private void Awake()
         {
             isDebug = Config.Bind<bool>("General", "IsDebug", true, "Enable debug");
             Logger.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            //harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            Statics.Tea = "FUCK";
+            Statics.CustomerDialogDrinkModiferTea = "FUCK";
+            Statics.Coffee = "ASS";
+            Statics.CustomerDialogDrinkTypeCoffee = "ASS";
+            Statics.CustomerDialogDrinkModiferCoffee = "ASS ";
+            Statics.BaristaTalk_PatHead = new string[] {"FUCK YOU"};
+
         }
 
-        private void Update()
-        {
+        
 
-
-        }
-
-        private static int framecount = 0;
-        private static int maxframecount = 1000;
-
-
-        [HarmonyPatch(typeof(Statics), "Statics")]
-        static class GameMode_Arcade_Patch
-        {
-
-            static void Postfix(BaristaController __instance)
-            {
-               
-            }
-        }
 
     }
 }
