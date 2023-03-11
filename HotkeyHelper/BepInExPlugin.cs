@@ -42,13 +42,11 @@ namespace HotKey
                 Debug.Log((pref ? typeof(BepInExPlugin).Namespace + " " : "") + str);
         }
 
-
         internal const string PLUGIN_GUID = "telnet.HotKeyHelper";
         internal const string PLUGIN_NAME = "HotKeyHelper";
         internal const string PLUGIN_VERS = "0.0.0.1";
 
         //FillingTool Milkfill;// = GameObject.Find("Milk").GetComponent<FillingTool>();
-
 
         //FillingTool Creamfill = GameObject.Find("Cream").GetComponent<FillingTool>();
         //FillingTool WhippedCreamfill = GameObject.Find("WhippedCream").GetComponent<FillingTool>();
@@ -80,7 +78,6 @@ namespace HotKey
         public static ConfigEntry<string> confighotkeysubmit;
         public static ConfigEntry<string> Confighotkeymilking;
 
-
         private void Awake()
         {
             isDebug = Config.Bind<bool>("General", "IsDebug", true, "Enable debug");
@@ -109,8 +106,6 @@ namespace HotKey
             confighotkeyreset = Config.Bind("Hotkeys", "hotkeyreset", "left ctrl", "Hotkey to reset cup");
             confighotkeysubmit = Config.Bind("Hotkeys", "hotkeysubmit", "space", "Hotkey to submit order");
             Confighotkeymilking = Config.Bind("Hotkeys", "hotkeymilking", "left shift", "Hotkey to milk Barista");
-
-
 
             // set keys to hotkeys in dictionary
 
