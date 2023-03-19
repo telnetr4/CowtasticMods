@@ -2,5 +2,13 @@
   <PropertyGroup>
     <Version>0.0.0.2</Version>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
   <Import Project="$(SolutionDir)\cowstuff.targets" />
+  <ItemGroup>
+    <Reference Include="SkToolbox">
+      <HintPath>..\..\Cowtastic Cafe_1.0.0.24 - Dev\BepInEx\plugins\SkToolbox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
