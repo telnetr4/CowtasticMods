@@ -29,7 +29,10 @@ Take all assemblies you have copied into the temporary folder and move them into
 ## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
 
-1. Download BepInEx 5 x86 from the [BepInEx Github releases](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.21).
+1. Download the BepInEx 5 release for your OS from the [BepInEx Github releases](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.21).
+	- On Windows, download the `x86` version.
+	- On Linux/MacOS, download archive with designation `nix`.
+
 2. Extract the contents into the game root. After you have downloaded the correct game version, extact the contents of the archive into the game folder.
 
 	- On Windows, the game root folder is where the game executable is located.
