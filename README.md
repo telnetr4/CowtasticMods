@@ -53,10 +53,13 @@ The following installation instructions are derivative of the [BepInEx install g
 		 This should generate a BepInEx configuration file into `BepInEx/config` folder and an initial log file 'BepInEx/LogOutput.txt'.
 
 # Mod Installation:
+
+	I would *highly* recommend following the instructions contained in the Readme included with the mods. Most of their instructions will be:
+	
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
-4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section.
+4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod name) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section.
 
 # Configuration:
 Some mods have configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
