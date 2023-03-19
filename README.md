@@ -6,7 +6,7 @@ Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the dow
 
 # Prereq Installations
 ## Unstripped DLLs
-BepInEx requires the unstripped assemblies (DLLs), which can be found [here](https://github.com/telnetr4/CowtasticMods/releases/tag/UnstrippedDLLs). There are two ways to do this, [as reproduced here]](https://hackmd.io/@ghorsington/rJuLdZTzK#Move-unstripped-assemblies-to-the-game-THE-DIRTY-BUT-BASIC-WAY):
+BepInEx requires the unstripped assemblies (DLLs), which can be found [here](https://github.com/telnetr4/CowtasticMods/releases/tag/UnstrippedDLLs). There are two ways to do this, [as reproduced from here](https://hackmd.io/@ghorsington/rJuLdZTzK#Move-unstripped-assemblies-to-the-game-THE-DIRTY-BUT-BASIC-WAY):
 1. Move unstripped assemblies to the game (THE DIRTY BUT BASIC WAY)
 \
 Take all assemblies you have copied into the temporary folder and move them into `Cowtastic Cafe_Data/Managed`. Overwrite when asked.
@@ -36,7 +36,7 @@ The following installation instructions are derivative of the [BepInEx install g
 	- On Linux, the game root folder is where the executable <Game>.x86 is located.
 	- On macOS, the root folder is where the game <Game>.app is located.
 3. Do a first run to generate configuration files
-	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`. If it doesn't, follow the 
+	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`.
 	- On Linux/MacOS, first, open the included run script `run_bepinex.sh` in a text editor of your choice. Edit the line `executable_name="";` to the name of the executable.
 		> On Linux, this is simply the name of the game executable
 		
@@ -52,10 +52,7 @@ The following installation instructions are derivative of the [BepInEx install g
 		 
 		 This should generate a BepInEx configuration file into `BepInEx/config` folder and an initial log file 'BepInEx/LogOutput.txt'.
 
-# Installation of mods:
-
-I would *highly* suggest reading the readmes for each of the individual mods. Most of the mod install instructions will go something like this:
-	
+# Mod Installation:
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
@@ -64,7 +61,7 @@ I would *highly* suggest reading the readmes for each of the individual mods. Mo
 # Configuration:
 Some mods have configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
 
-#Uninstallation:
+# Uninstallation:
 To uninstall the plugin, simply delete the plugin files from the BepInEx/plugins folder in your game's directory.
 
 # Troubleshooting:
