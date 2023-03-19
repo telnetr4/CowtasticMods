@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "STFU": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
