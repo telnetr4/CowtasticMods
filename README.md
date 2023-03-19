@@ -54,12 +54,12 @@ The following installation instructions are derivative of the [BepInEx install g
 
 # Installation of mods:
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
-2. Extract the contents of the archive into the BepInEx/plugins folder in your game's directory.
+2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
-4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod) appears in BepInEx/config, that means it's working! If it doesn't, check the troubleshooting section.
+4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section.
 
 # Configuration:
-This plugin has configurable settings, located in the BepInEx/config folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
+This plugin has configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
 The config file is where you can reset keys using Unity Keycodes (http://answers.unity.com/answers/762252/view.html). Hotkeys defaults are currently set to allow one-handed use.
 
 #Uninstallation:
