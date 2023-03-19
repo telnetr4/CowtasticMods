@@ -59,8 +59,7 @@ The following installation instructions are derivative of the [BepInEx install g
 4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section.
 
 # Configuration:
-This plugin has configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
-The config file is where you can reset keys using Unity Keycodes (http://answers.unity.com/answers/762252/view.html). Hotkeys defaults are currently set to allow one-handed use.
+Some mods have configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
 
 #Uninstallation:
 To uninstall the plugin, simply delete the plugin files from the BepInEx/plugins folder in your game's directory.
