@@ -26,7 +26,7 @@ Take all assemblies you have copied into the temporary folder and move them into
 
 3. Install BepInEx.
 
-## 
+## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
 
 1. Download BepInEx 5 x86 from the [BepInEx Github releases](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.21).
