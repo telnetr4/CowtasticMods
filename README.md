@@ -83,7 +83,6 @@ If you encounter any issues with the plugin, try the following steps:
 
 
 # Contact:
--
 If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet#8242 and https://github.com/telnetr4/CowtasticMods/issues.
 You can also try the Cowtastic Cafe channels in PreggoPixel's Games Discord server, but I'll probably be the one to reply.
 Bugs can be reported at https://github.com/telnetr4/CowtasticMods/issues
