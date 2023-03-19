@@ -54,7 +54,7 @@ The following installation instructions are derivative of the [BepInEx install g
 
 # Mod Installation:
 
-	I would *highly* recommend following the instructions contained in the Readme included with the mods. Most of their instructions will be:
+I would *highly* recommend following the instructions contained in the Readme included with the mods. Most of their instructions will be:
 	
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
