@@ -68,11 +68,17 @@ To uninstall the plugin, simply delete the plugin files from the BepInEx/plugins
 If you encounter any issues with the plugin, try the following steps:
 
 -Check if the plugin is compatible with your game version.
+	
 -Check if the plugin is conflicting with any other plugins you have installed.
+	
 -Check if the plugin is installed correctly and in the right folder.
+	
 -Check the plugin's documentation or readme file for any troubleshooting tips.
+	
 -Scream in frustration.
+	
 -Check that you have installed the correct version of BepInEx 5 for the OS you are using.
+	
 -Make sure your game has the unstripped DLLs.
 
 
