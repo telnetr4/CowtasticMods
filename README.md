@@ -53,6 +53,9 @@ The following installation instructions are derivative of the [BepInEx install g
 		 This should generate a BepInEx configuration file into `BepInEx/config` folder and an initial log file 'BepInEx/LogOutput.txt'.
 
 # Installation of mods:
+
+I would *highly* suggest reading the readmes for each of the individual mods. Most of the mod install instructions will go something like this:
+	
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
