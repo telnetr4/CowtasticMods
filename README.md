@@ -41,9 +41,9 @@ The following installation instructions are derivative of the [BepInEx install g
 3. Do a first run to generate configuration files
 	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`.
 	- On Linux/MacOS, first, open the included run script `run_bepinex.sh` in a text editor of your choice. Edit the line `executable_name="";` to the name of the executable.
-		> On Linux, this is simply the name of the game executable
+		- On Linux, this is simply the name of the game executable
 		
-		> On macOS, this is the name of the game app with .app extension, for example HuniePop.app
+		- On macOS, this is the name of the game app with .app extension, for example HuniePop.app
 	
 		 Finally, open the terminal in the game folder and make `run_bepinex.sh` script executable:
 	
