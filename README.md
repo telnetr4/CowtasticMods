@@ -5,8 +5,8 @@ Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the dow
 
 
 # Prereq Installations
-## Unstripped DLLs
-BepInEx requires the unstripped assemblies (DLLs), which can be found [here](https://github.com/telnetr4/CowtasticMods/releases/tag/UnstrippedDLLs). There are two ways to do this, [as reproduced from here](https://hackmd.io/@ghorsington/rJuLdZTzK#Move-unstripped-assemblies-to-the-game-THE-DIRTY-BUT-BASIC-WAY):
+## Unstripped DLLs (CorLibs)
+BepInEx requires the unstripped assemblies (DLLs), which can be found [here](https://github.com/telnetr4/CowtasticMods/releases/tag/UnstrippedDLLs). There are two ways to do this; [instructions as reproduced from here](https://hackmd.io/@ghorsington/rJuLdZTzK#Move-unstripped-assemblies-to-the-game-THE-DIRTY-BUT-BASIC-WAY):
 1. Move unstripped assemblies to the game (THE DIRTY BUT BASIC WAY)
 \
 Take all assemblies you have copied into the temporary folder and move them into `Cowtastic Cafe_Data/Managed`. Overwrite when asked.
@@ -24,7 +24,7 @@ Take all assemblies you have copied into the temporary folder and move them into
 \
 `dllSearchPathOverride=unstripped_corlib`
 
-3. Install BepInEx.
+3. You can now install BepInEx.
 
 ## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
@@ -56,18 +56,17 @@ The following installation instructions are derivative of the [BepInEx install g
 		 This should generate a BepInEx configuration file into `BepInEx/config` folder and an initial log file 'BepInEx/LogOutput.txt'.
 
 # Mod Installation:
-
-I would *highly* recommend following the instructions contained in the Readme included with the mods. Most of their instructions will be:
+You can get pre-compiled versions of the mods from the [releases](https://github.com/telnetr4/CowtasticMods/releases) section of the repo. I would *highly* recommend following the instructions from the Readme included with the mod, but most of it is some variation of:
 	
-1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
+1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided above or BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
 4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod name) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section.
 
-# Configuration:
+# Mod Configuration:
 Some mods have configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
 
-# Uninstallation:
+# Mod Uninstallation:
 To uninstall the plugin, simply delete the plugin files from the BepInEx/plugins folder in your game's directory.
 
 # Troubleshooting:
@@ -78,9 +77,9 @@ If you encounter any issues with the plugin, try the following steps:
 - Check if the plugin is installed correctly and in the right folder.
 - Check the plugin's documentation or readme file for any troubleshooting tips.
 - Scream in frustration.
+- Check that BepInEx runs. If `BepInEx/config` does not generate, that means BepInEx isn't starting. Make sure you have the Unstri
 - Check that you have installed the correct version of BepInEx 5 for the OS you are using.
 - Make sure your game has the unstripped DLLs.
-
 
 # Contact:
 If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet#8242 and https://github.com/telnetr4/CowtasticMods/issues.
