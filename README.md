@@ -77,7 +77,7 @@ If you encounter any issues with the plugin, try the following steps:
 - Check if the plugin is installed correctly and in the right folder.
 - Check the plugin's documentation or readme file for any troubleshooting tips.
 - Scream in frustration.
-- Check that BepInEx runs. If `BepInEx/config` does not generate, that means BepInEx isn't starting. Make sure you have the Unstri
+- Check that BepInEx runs. If `BepInEx/config` does not generate on starting your game, that means BepInEx isn't starting.
 - Check that you have installed the correct version of BepInEx 5 for the OS you are using.
 - Make sure your game has the unstripped DLLs.
 
