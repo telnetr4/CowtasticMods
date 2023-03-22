@@ -61,7 +61,7 @@ You can get pre-compiled versions of the mods from the [releases](https://github
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided above or BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
-4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod name) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section.
+4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod name) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section. (Note: naming convention may vary depending on who wrote the mod).
 
 # Mod Configuration:
 Some mods have configurable settings, located in the `BepInEx/config` folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
