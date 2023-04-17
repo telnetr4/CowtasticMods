@@ -15,7 +15,7 @@ Take all assemblies you have copied into the temporary folder and move them into
 
 **OR**
 
-1. Move unstripped assemblies to the game (THE CLEAN BUT MORE INVOLVED WAY. DO THIS AT THE "\*" IN THE BEPINEX INSTALL INSTRUCTIONS.)
+2. Move unstripped assemblies to the game (THE CLEAN BUT MORE INVOLVED WAY. DO THIS AT THE "\*" IN THE BEPINEX INSTALL INSTRUCTIONS.)
 	1. Create folder named `unstripped_corlib` in your game folder (the folder where the game EXE resides)
 
 	2. Move the assemblies you copied into `unstripped_corlib`
@@ -26,7 +26,7 @@ Take all assemblies you have copied into the temporary folder and move them into
 \
 `dllSearchPathOverride=unstripped_corlib`
 
-2. You can now run BepInEx.
+You can now run BepInEx.
 
 ## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
