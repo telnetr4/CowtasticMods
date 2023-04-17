@@ -44,7 +44,7 @@ The following installation instructions are derivative of the [BepInEx install g
 \*
 
 3. Do a first run to generate configuration files
-	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`. If the log and config doesn't show up, that means you did something wrong. If it does, you have installed BepInEx and can now install mods.
+	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`. If the log and config doesn't show up, that means you did something wrong. If it does, you have installed BepInEx and can now install mods (go to the "Mod Installation" section)
 	- On Linux/MacOS, first, open the included run script `run_bepinex.sh` in a text editor of your choice. Edit the line `executable_name="";` to the name of the executable.
 		- On Linux, this is simply the name of the game executable
 		
