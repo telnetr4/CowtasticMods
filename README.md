@@ -1,5 +1,5 @@
 # CowtasticMods
-This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe.
+This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document attempts to explain, in detail and with overly precise instructions, how to install mods for Cowtastic Cafe.
 
 Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the downloads.
 
