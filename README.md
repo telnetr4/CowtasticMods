@@ -3,17 +3,19 @@ This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtasti
 
 Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the downloads.
 
+This document attempts to explain, in detail and with overly precise instructions, how to install mods for Cowtastic Cafe. If you have never installed mods or are setting up a fresh modded game, start reading from the "Prereq Installations" section and work your way down this document. If you are adding a mod to an already modded game you can start at the "Mod Installation" section.
+
 
 # Prereq Installations
 ## Unstripped DLLs (CorLibs)
 BepInEx requires the unstripped assemblies (DLLs), which can be found [here](https://github.com/telnetr4/CowtasticMods/releases/tag/UnstrippedDLLs). There are two ways to do this; [instructions as reproduced from here](https://hackmd.io/@ghorsington/rJuLdZTzK#Move-unstripped-assemblies-to-the-game-THE-DIRTY-BUT-BASIC-WAY):
 1. Move unstripped assemblies to the game (THE DIRTY BUT BASIC WAY)
 \
-Take all assemblies you have copied into the temporary folder and move them into `Cowtastic Cafe_Data/Managed`. Overwrite when asked.
+Take all assemblies you have copied into the temporary folder and move them into `Cowtastic Cafe_Data/Managed`. Overwrite when asked. You can now install BepInEx.
 
 **OR**
 
-2. Move unstripped assemblies to the game (THE CLEAN BUT MORE INVOLVED WAY)
+2. Move unstripped assemblies to the game (THE CLEAN BUT MORE INVOLVED WAY. DO THIS AT THE "\*" IN THE BEPINEX INSTALL INSTRUCTIONS.)
 	1. Create folder named `unstripped_corlib` in your game folder (the folder where the game EXE resides)
 
 	2. Move the assemblies you copied into `unstripped_corlib`
@@ -24,7 +26,7 @@ Take all assemblies you have copied into the temporary folder and move them into
 \
 `dllSearchPathOverride=unstripped_corlib`
 
-3. You can now install BepInEx.
+3. You can now run BepInEx.
 
 ## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
@@ -38,6 +40,9 @@ The following installation instructions are derivative of the [BepInEx install g
 	- On Windows, the game root folder is where the game executable is located.
 	- On Linux, the game root folder is where the executable <Game>.x86 is located.
 	- On macOS, the root folder is where the game <Game>.app is located.
+	
+\*
+
 3. Do a first run to generate configuration files
 	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`. If the log and config doesn't show up, that means you did something wrong. If it does, you have installed BepInEx and can now install mods.
 	- On Linux/MacOS, first, open the included run script `run_bepinex.sh` in a text editor of your choice. Edit the line `executable_name="";` to the name of the executable.
