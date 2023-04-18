@@ -1,5 +1,5 @@
 # CowtasticMods
-This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document attempts to explain how to install mods for Cowtastic Cafe.
+This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document covers the _recommended_ way to install mods for Cowtastic Cafe.
 
 Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the downloads.
 
@@ -84,7 +84,7 @@ If you encounter any issues with the plugin, try the following steps:
 - Check that you didn't download the mod's source files instead of the compiled mods. There should not be .cs files included with any installable mod.
 - Scream in frustration.
 - Check that BepInEx runs. If `BepInEx/config` does not generate on starting your game, that means BepInEx isn't starting.
-- Check that you have installed the correct version of BepInEx 5 for the OS you are using.
+- Check that you have installed the correct version of BepInEx 5 for the OS you are using. These mods have not been tested with BepInEx 6.
 - Make sure your game has the unstripped DLLs.
 
 # Contact:
