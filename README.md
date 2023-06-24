@@ -1,5 +1,5 @@
 # CowtasticMods
-This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document covers the _recommended_ way to install mods for Cowtastic Cafe.
+This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document covers the _recommended_ way to install mods for Cowtastic Cafe 1.1.0.0.
 
 Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the downloads.
 
@@ -32,14 +32,15 @@ You can now run BepInEx.
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
 
 1. Download the BepInEx 5 release for your OS from the [BepInEx Github releases](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.21).
-	- On Windows, download the `x86` version.
+	- On Windows, download the `x64` version.
 	- On Linux/MacOS, download archive with designation `nix`.
 
 2. Extract the contents into the game root. After you have downloaded the correct game version, extact the contents of the archive into the game folder.
 
 	- On Windows, the game root folder is where the game executable is located.
-	- On Linux, the game root folder is where the executable <Game>.x86 is located.
 	- On macOS, the root folder is where the game <Game>.app is located.
+  	- On Linux, the game root folder is where the executable <Game>.x86_64 is located.
+
 	
 \*
 
