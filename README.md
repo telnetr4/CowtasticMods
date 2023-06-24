@@ -8,25 +8,7 @@ If you have never installed mods or are setting up a new install of the game, st
 
 # Prereq Installations
 ## Unstripped DLLs (CorLibs)
-BepInEx requires the unstripped assemblies (DLLs), which can be found [here](https://github.com/telnetr4/CowtasticMods/releases/tag/UnstrippedDLLs). There are two ways to do this; [instructions as reproduced from here](https://hackmd.io/@ghorsington/rJuLdZTzK#Move-unstripped-assemblies-to-the-game-THE-DIRTY-BUT-BASIC-WAY):
-1. Move unstripped assemblies to the game (THE DIRTY BUT BASIC WAY)
-\
-Take all assemblies you have copied into the temporary folder and move them into `Cowtastic Cafe_Data/Managed`. Overwrite when asked. You can now install BepInEx.
-
-**OR**
-
-2. Move unstripped assemblies to the game (THE CLEAN BUT MORE INVOLVED WAY. DO THIS AT THE "\*" IN THE BEPINEX INSTALL INSTRUCTIONS.)
-	1. Create folder named `unstripped_corlib` in your game folder (the folder where the game EXE resides)
-
-	2. Move the assemblies you copied into `unstripped_corlib`
-
-	3. Open `doorstop_config.ini` in a text editor of your choice (e.g. Notepad)
-
-	4. Find option named `dllSearchPathOverride` and set it to the following:
-\
-`dllSearchPathOverride=unstripped_corlib`
-
-You can now run BepInEx.
+_Cowtastic Cafe 1.1.0.0 includes the unstripped DLLs, so you can skip this step. For instructions on how to install these DLLs for the previous version of Cowtastic Cafe, please refer to the file history for README.md._
 
 ## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
