@@ -7,8 +7,8 @@ If you have never installed mods or are setting up a new install of the game, st
 
 
 # Prereq Installations
-## Unstripped DLLs (CorLibs)
-_Cowtastic Cafe 1.1.0.0 includes the unstripped DLLs, so you can skip this step. For instructions on how to install these DLLs for the previous version of Cowtastic Cafe, please refer to the file history for README.md._
+## ~~Unstripped DLLs (CorLibs)~~
+_Cowtastic Cafe 1.1.0.0 includes the unstripped DLLs, so you can skip this step. For instructions on how to install these DLLs for the previous version of Cowtastic Cafe, please refer to the file history for README.md  or the Readme included with the mod you are installing._
 
 ## Install BepInEx
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
@@ -22,9 +22,6 @@ The following installation instructions are derivative of the [BepInEx install g
 	- On Windows, the game root folder is where the game executable is located.
 	- On macOS, the root folder is where the game <Game>.app is located.
   	- On Linux, the game root folder is where the executable <Game>.x86_64 is located.
-
-	
-\*
 
 3. Do a first run to generate configuration files
 	- On Windows, simply run the game executable. This should generate BepInEx configuration file into `BepInEx/config` folder and an initial log file `BepInEx/LogOutput.txt`. If the log and config show up that means you have installed BepInEx. You can now install mods (go to the "Mod Installation" section)
@@ -44,8 +41,8 @@ The following installation instructions are derivative of the [BepInEx install g
 		 This should generate a BepInEx configuration file into `BepInEx/config` folder and an initial log file 'BepInEx/LogOutput.txt'.
 
 # Mod Installation:
-You can get pre-compiled versions of the mods from the [releases](https://github.com/telnetr4/CowtasticMods/releases) section of the repo. I would *highly* recommend following the instructions from the Readme included with the mod, but most of it is some variation of:
-	
+You can get pre-compiled versions of the mods from the [releases](https://github.com/telnetr4/CowtasticMods/releases) section of the repo. I would *highly* recommend reading the instructions from the Readme included with the mod. Even though many of the mods are for older versions of Cowtastic Cafe, many of them will still work and are some variation of:
+
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided above or BepInEx's documentation to install it.
 2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
@@ -67,13 +64,13 @@ If you encounter any issues with the plugin, try the following steps:
 - Check that you didn't download the mod's source files instead of the compiled mods. There should not be .cs files included with any installable mod.
 - Scream in frustration.
 - Check that BepInEx runs. If `BepInEx/config` does not generate on starting your game, that means BepInEx isn't starting.
-- Check that you have installed the correct version of BepInEx 5 for the OS you are using. These mods have not been tested with BepInEx 6.
-- Make sure your game has the unstripped DLLs.
+- Check that you have installed the correct version of BepInEx 5 for the OS you are using. These mods have not been tested with BepInEx 6 (if you test them in 6 and they work, let me know).
+- If you are playing a version of Cowtastic Cafe lower than 1.1.0.0, make sure your game has the unstripped DLLs.
 
 # Contact:
-If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet#8242.
+If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet.8242.
 
-You can also try the Cowtastic Cafe channels in PreggoPixel's Games Discord server, but that will be slower and I'll probably be the one to reply.
+You can also try the [Cowtastic Cafe mod channel](https://discord.com/channels/740342492599156876/1122014015032406036) in PreggoPixel's Games Discord server, but that may be slower.
 
 Bugs can be reported at https://github.com/telnetr4/CowtasticMods/issues
 
