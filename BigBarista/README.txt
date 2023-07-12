@@ -1,18 +1,20 @@
 README.TXT
 
 Plugin Name: BigBarista
-Plugin Version: 0.0.0.2
-Supported Game: Cowtastic Cafe v 1.0.0.24 (Windows 10 x86) with BepInEx 5
+Plugin Version: 0.0.1.1
+Supported Game: Cowtastic Cafe v 1.1.0.0 (Windows 10 x64) with BepInEx 5
 Author: "Telnet"
 
 Introduction:
-This is a plugin for Cowtastic Cafe v 1.0.0.24 that is powered by the BepInEx 5 framework.
+This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 framework.
 This plugin allows you to scale the Barista.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
 
+This mod has optional SKTools compatability.
+
 Installation:
 
-1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
+1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by https://github.com/telnetr4/CowtasticMods#install-bepinex
 2. Extract the contents of the archive into the BepInEx/plugins folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
 4. If the config file telnet.bigbarista.cfg appears in BepInEx/config, that means it's working!
@@ -33,15 +35,13 @@ If you encounter any issues with the plugin, try the following steps:
 -Check the plugin's documentation or readme file for any troubleshooting tips.
 -Scream in frustration.
 -Check that you have installed the correct version of BepInEx 5.
+-Check the indepth tutorial: https://github.com/telnetr4/CowtasticMods#install-bepinex
 
 Bugs:
--Scores and drink ingredients render over the Barista.
 -There could be a memory leak. Probably OK as long as you don't switch back to the main menu too many times. If it happens, restart the game.
 -Position offsets may need tuning
--At certain scales, the game will become unplayable. Don't go overboard.
 
 Planned Features (If I ever get to it):
--Add a control GUI
 -Add the option and systems to modify/add gameplay mechanics related to scale
 
 Contact:
