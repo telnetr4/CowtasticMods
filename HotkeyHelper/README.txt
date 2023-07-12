@@ -1,21 +1,23 @@
 README.TXT
 
 Plugin Name: HotkeyHelper
-Plugin Version: 0.0.0.1
-Supported Game: Cowtastic Cafe v 1.0.0.24 (Windows 10 x86) with BepInEx 5
+Plugin Version: 0.0.1.1
+Supported Game: Cowtastic Cafe v 1.1.0.0 (Windows 10 x64) with BepInEx 5
 Author: "Telnet"
 
 Introduction:
-This is a plugin for Cowtastic Cafe v 1.0.0.24 that is powered by the BepInEx 5 framework.
-This (rough) plugin allows you to control things using your keyboard.
+This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 framework.
+This plugin allows you to control pouring, milking and resetting/submitting drinks using your keyboard.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
+
+This mod has optional SKTools compatability.
 
 Installation:
 
-1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by BepInEx's documentation to install it.
+1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided by https://github.com/telnetr4/CowtasticMods#install-bepinex
 2. Extract the contents of the archive into the BepInEx/plugins folder in your game's directory.
 3. Launch the game and check if the plugin is working properly.
-4. If the config file telnet.HotkeyHelper.cfg appears in BepInEx/config, that means it's working!
+4. If the config file telnet.HotkeyHelper.cfg appears in BepInEx/config, that means it's working! If it doesn't, check the troubleshooting section.
 
 Configuration:
 This plugin has configurable settings, located in the BepInEx/config folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
@@ -33,14 +35,23 @@ If you encounter any issues with the plugin, try the following steps:
 -Check the plugin's documentation or readme file for any troubleshooting tips.
 -Scream in frustration.
 -Check that you have installed the correct version of BepInEx 5.
--Make sure your game is using the unstripped DLLs.
 
-Bugs:
--This mod has very poor performance. Do not be surprised if your game bogs down when starting a new game.
--No pause button.
+Changelog:
+0.0.1.1:
+Updated to 1.1.0.0 (I did nothing)
+Actually uploaded it to the Github this time.
+0.0.1.0:
+Redid the input keys to be slightly less stupid.
+Added SKTools support.
+Added cheat text to win screen
+
+Known Bugs:
+-I hit a bug that made the cup disappear, but I haven't been able to reproduce it since.
 
 Planned Features (If I ever get to it):
--rewrite the whole damn thing. I learned a lot from modding this, and I think I know a better way to do it.
+-pause button
+-upgrade options
+-pressing unbought ingredients allows you to buy intgredients.
 
 Contact:
 If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet#8242 and https://github.com/telnetr4/CowtasticMods/issues.

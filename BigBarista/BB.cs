@@ -26,11 +26,11 @@ namespace BigBarista
             PLUGIN_AUTH = "telnet",
             PLUGIN_NAME = "bigbarista",
             PLUGIN_GUID = PLUGIN_AUTH + "." + PLUGIN_NAME,
-            PLUGIN_VERS = "0.0.1.0",
-            PLUGIN_RECV = "1.0.0.24";
+            PLUGIN_VERS = "0.0.1.1",
+            PLUGIN_RECV = "1.1.0.0";
 
         internal static float ScaleFact = 1.5f;
-        public static ConfigEntry<float> ConfigScaleFact;
+        public static ConfigEntry<float> ConfigStartScaleFact;
         //public static ConfigEntry<bool> configdontscalez;
         public static ConfigEntry<float> configXoffset;
         public static ConfigEntry<float> configYoffset;
@@ -77,7 +77,7 @@ namespace BigBarista
             isDebug = Config.Bind<bool>("General", "IsDebug", false, "Enable debug");
 
             // Set up configs
-            ConfigScaleFact = Config.Bind("Barista Scale", "ScaleFact", 1.0f, "The scale factor that is applied to the barista. 2 will double her size while .5 will halve her size.");
+            ConfigStartScaleFact = Config.Bind("Barista Startup Scale", "StartScaleFact", 2.0f, "The scale factor that is applied to the barista on startup. 2 will double her size while .5 will halve her size.");
             //configdontscalez = Config.Bind("Offsets", "/*Dontscalez*/", true, "Determines whether to scale z.");
             //configXoffscalefactor = Config.Bind("Position Offsets", "Xoffscalefactor", 3.6603f, "A scale factor that is applied to Position offset. Don't need to change this unless the horizontal position looks wrong for ALL scales.");
             //configYoffscalefactor = Config.Bind("Position Offsets", "Yoffscalefactor", 2.8007f, "A scale factor that is applied to Position offset. Don't need to change this unless the vertical position looks wrong for ALL scales.");
@@ -118,6 +118,7 @@ namespace BigBarista
             }
 
             private BaristaController controlledbarista;
+            private Transform headtrans;
             //private string name;
             private SkinnedMeshRenderer controlledskinmesr;
             private Transform controlledtransform;
@@ -160,8 +161,9 @@ namespace BigBarista
             }
 
             public void bighead(float scale)
-            { 
-                // TODO: finish this
+            {
+                headtrans = this.controlledbarista.transform.Find("Armature").Find("Core").Find("Torso").Find("Head");
+                headtrans.localScale = new Vector3(scale, scale, 9.5f);
             }
 
         }
@@ -226,12 +228,12 @@ namespace BigBarista
             }
         }
 
-        [Command("baristascale", "Set the scale of the barista. moveproportional = true should keep the barista in the middle.","Big Barista Scaler")]
+        [Command("baristascale", "Set the scale of the barista.\n`baristascale 2 2` will scale Barb 2 x normal size. `moveproportional = true` should keep the barista in the middle.","Big Barista Scaler")]
         public static void scalebaristacmd(float x, float y, float z = 1.0f, bool moveproportional = true)
         {
             if (BSC is null)
             {
-                Dbgl($"Error: Barisa not found");
+                Dbgl($"Error: Barista not found");
                 throw new NullReferenceException("Barista Not found (on MainMenu?)");
             }
             Dbgl("Begin cmd baristascale done");
@@ -245,18 +247,18 @@ namespace BigBarista
         {
             if (BSC is null)
             {
-                Dbgl($"Error: Barisa not found");
+                Dbgl($"Error: Barista not found");
                 throw new NullReferenceException("Barista Not found (on MainMenu?)");
             }
             BSC.posbarista(new Vector3(x, y, z));
         }
 
-        [Command("bighead", "Sets big head mode. Set to 0 to turn off.", "Big Barista Scaler")]
-        public static void bigheadcmd(float z = 0.0f)
+        [Command("bighead", "Sets big head mode. Set to 0.95 to turn off.", "Big Barista Scaler")]
+        public static void bigheadcmd(float z = 2.0f)
         {
             if (BSC is null)
             {
-                Dbgl($"Error: Barisa not found");
+                Dbgl($"Error: Barista not found");
                 throw new NullReferenceException("Barista Not found (on MainMenu?)");
             }
             BSC.bighead(z);
