@@ -1,7 +1,7 @@
 # CowtasticMods
 This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document covers the _recommended_ way to install mods for Cowtastic Cafe 1.1.0.0.
 
-Check [releases](https://github.com/telnetr4/CowtasticMods/releases) for the downloads.
+Check [releases](https://github.com/telnetr4/CowtasticMods/releases/latest) for the downloads.
 
 If you have never installed mods or are setting up a new install of the game, start reading from the "Prereq Installations" section and work your way down this document. If you are adding a mod to an already modded game you can start at the "Mod Installation" section.
 
