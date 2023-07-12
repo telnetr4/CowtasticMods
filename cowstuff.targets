@@ -6,7 +6,7 @@
     <TargetFramework>net472</TargetFramework>
     <Platforms>AnyCPU</Platforms>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <GamePath>D:\Projects\Cowthing\Cowtastic Cafe_1.0.0.24 - Dev</GamePath>
+    <GamePath>C:\More Projects\Cowthing\Cowtastic_Windows_Dev_1.1.0.0</GamePath>
     <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
   </PropertyGroup>
 
@@ -52,7 +52,7 @@
   <PropertyGroup>
     <BepInExPath>$(GamePath)\BepInEx</BepInExPath>
     <ManagedDataPath>$(GamePath)\Cowtastic Cafe_Data\Managed</ManagedDataPath>
-    <UnityPath>$(GamePath)\unstripped_corlib</UnityPath>
+    <UnityPath>$(ManagedDataPath)</UnityPath>
   </PropertyGroup>
   
   <!-- Set start action -->
@@ -213,11 +213,12 @@
       <HintPath>$(UnityPath)\UnityEngine.TerrainModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <!--
     <Reference Include="UnityEngine.TextCoreModule">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(UnityPath)\UnityEngine.TextCoreModule.dll</HintPath>
       <Private>False</Private>
-    </Reference>
+    </Reference> -->
     <Reference Include="UnityEngine.TextRenderingModule">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(UnityPath)\UnityEngine.TextRenderingModule.dll</HintPath>

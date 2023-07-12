@@ -26,8 +26,8 @@ namespace SkToolboxCC
             PLUGIN_AUTH = "telnet",
             PLUGIN_NAME = "SkToolboxCC",
             PLUGIN_GUID = PLUGIN_AUTH + "." + PLUGIN_NAME,
-            PLUGIN_VERS = "0.0.1.0",
-            PLUGIN_RECV = "1.0.0.24";
+            PLUGIN_VERS = "0.0.1.1",
+            PLUGIN_RECV = "1.1.0.0";
 
 
         public static ConfigEntry<bool> isDebug;
@@ -52,7 +52,7 @@ namespace SkToolboxCC
             }
             return null;
         }
-
+        
         private bool checkokversion(string version)
         {
             Version game = new Version(Application.version);
@@ -79,7 +79,6 @@ namespace SkToolboxCC
         private void Awake()
         {
             isDebug = Config.Bind<bool>("General", "IsDebug", true, "Enable debug");
-
             SceneManager.sceneLoaded += SceneManager_sceneLoaded;
             resetbutton = FindInActiveObjectByName("Button Reset Cup");
             checkokversion(PLUGIN_RECV);
@@ -196,11 +195,12 @@ namespace SkToolboxCC
         }
 
         [Command("barisay", "Have the barista say something.", "Misc")]
-        public static void barisay(string talk = "something", float startdelay = 0f, float stopdelay = 20f)
+        public static void barisay(string talk = "something", string noise = "Spoken_Ah", float startdelay = 0f, float stopdelay = 20f)
         {
             if (!checkissceneready())
                 return;
-            bartalkmanager.StartBaristaTalk(talk, startdelay, stopdelay);
+
+            bartalkmanager.StartBaristaTalk(new DialogSentence(talk,noise), startdelay, stopdelay);
         }
 
 
@@ -210,6 +210,8 @@ namespace SkToolboxCC
         //    SkToolbox.Logger.Submit(EM.GetPrivateField<float>("TimeEventStart").ToString());
         //}
 
+        //TODO: Redo event commands
+        /*
         [Command("startEventint", "Start an event via int:\n0 = Always Flustered\n1=Sell More Value\n2=Fast Milk Fill\n3=Not Flustered Customers\n4=Milk Burst", "Events")]
         public static void starteventcmd(int i)
         {
@@ -264,7 +266,7 @@ namespace SkToolboxCC
         }
         //LevelManager.ReloadScene
         //LevelManager.ChangeSceneDirect
-
+        */
 
 
 

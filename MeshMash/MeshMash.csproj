@@ -6,4 +6,12 @@
   <ItemGroup>
     <PackageReference Include="AssimpNet" Version="5.0.0-beta1" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Game">
+      <HintPath>..\..\Cowtastic_Windows_Dev_1.1.0.0\Cowtastic Cafe_Data\Managed\Game.dll</HintPath>
+    </Reference>
+    <Reference Include="GuiPro">
+      <HintPath>..\..\Cowtastic_Windows_Dev_1.1.0.0\Cowtastic Cafe_Data\Managed\GuiPro.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

@@ -12,11 +12,11 @@ using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 using UnityEngine.UI;
 using SkToolbox;
-
+//TODO: fix ctrl reset
 namespace HotKey
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERS)]
-    [BepInDependency("com.Skrip.SkToolbox", BepInDependency.DependencyFlags.HardDependency)] // Set the dependency ] // Set the dependency 
+    [BepInDependency("com.Skrip.SkToolbox", BepInDependency.DependencyFlags.SoftDependency)] // Set the dependency ] // Set the dependency 
     public class BepInExPlugin : BaseUnityPlugin
     {
         Harmony harmony = new Harmony(HARMONY_ID);
@@ -25,8 +25,8 @@ namespace HotKey
             PLUGIN_AUTH = "telnet",
             PLUGIN_NAME = "hotkeyhelper",
             PLUGIN_GUID = PLUGIN_AUTH + "." + PLUGIN_NAME,
-            PLUGIN_VERS = "0.0.1.0",
-            PLUGIN_RECV = "1.0.0.24",
+            PLUGIN_VERS = "0.0.1.1",
+            PLUGIN_RECV = "1.1.0.0",
             HARMONY_ID = PLUGIN_GUID + "." + "harmony";
 
         public static ConfigEntry<bool> isDebug;
@@ -67,11 +67,9 @@ namespace HotKey
         }
 
         [Command("Hotkeyoverridetoggle", "toggles hotkeys on and off.","Hotkeys")]
-        public static void hkot ()
+        public static void hkot()
         {
-            if (manualhotkeyoverride)
-                manualhotkeyoverride = false;
-            manualhotkeyoverride = true;
+            manualhotkeyoverride = !manualhotkeyoverride;
         }
 
         //public static List<ConfigEntry<string>> confighotkeyList = new List<ConfigEntry<string>>();
@@ -186,7 +184,9 @@ namespace HotKey
             foreach (Button i in objs)
             {
                 if (i.name == name)
+                {
                     return i;
+                }
             }
             return null;
         }
@@ -208,7 +208,7 @@ namespace HotKey
             bool ishard = scenename.Contains("Hard");
             string hardstring = (ishard ? " Hard" : "");
 
-            ordermanager = GameObject.FindObjectOfType<OrderManager>(); Dbgl("OrderManager");
+            ordermanager = GameObject.FindObjectOfType<OrderManager>();// Dbgl("OrderManager");
             //dialogmanager = GameObject.Find("Canvas Dialog" + hardstring).GetComponent<BaristaTalkManager>();
             baristamilkinghelper = GameObject.Find("Sphere").GetComponent<BaristaMilkingHelper>();
 
@@ -225,7 +225,7 @@ namespace HotKey
         private bool boolstack = false;
         private void Update()
         {
-            if (!sceneready)
+            if (!sceneready || manualhotkeyoverride)
                 return;
 
             // I'm still not convinced that this is the best way to do this...
