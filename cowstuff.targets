@@ -219,6 +219,11 @@
       <HintPath>$(UnityPath)\UnityEngine.TextCoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference> -->
+    <Reference Include="Unity.TextMeshPro">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(UnityPath)\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(UnityPath)\UnityEngine.TextRenderingModule.dll</HintPath>

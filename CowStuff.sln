@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotkeyHelper", "HotkeyHelpe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkToolboxCC", "SkToolboxCC\SkToolboxCC.csproj", "{D1D6B982-9914-434A-B1D8-51D1DD24B88A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STFU", "STFU\STFU.csproj", "{A32781E8-1C05-4E31-BAA8-E3259DEFF9F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STFU", "STFU\STFU.csproj", "{A32781E8-1C05-4E31-BAA8-E3259DEFF9F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skcheats", "Skcheats\Skcheats.csproj", "{726474DD-4C59-4BC4-A8AB-736EFE69A62C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,14 @@ Global
 		{A32781E8-1C05-4E31-BAA8-E3259DEFF9F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A32781E8-1C05-4E31-BAA8-E3259DEFF9F4}.Release|x64.ActiveCfg = Release|Any CPU
 		{A32781E8-1C05-4E31-BAA8-E3259DEFF9F4}.Release|x64.Build.0 = Release|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Debug|x64.Build.0 = Debug|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Release|x64.ActiveCfg = Release|Any CPU
+		{726474DD-4C59-4BC4-A8AB-736EFE69A62C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
