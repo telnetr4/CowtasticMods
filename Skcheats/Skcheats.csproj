@@ -1,14 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Version>0.0.0.2</Version>
-  </PropertyGroup>
+  <Import Project="$(SolutionDir)\cowstuff.targets" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath></OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <Import Project="$(SolutionDir)\cowstuff.targets" />
-  <ItemGroup>
-    <Compile Remove="CController.cs" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="SkToolbox">
       <HintPath>..\..\Cowtastic Cafe_1.0.0.24 - Dev\BepInEx\plugins\SkToolbox.dll</HintPath>
