@@ -1,5 +1,5 @@
 # CowtasticMods
-This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe. This document covers the _recommended_ way to install mods for Cowtastic Cafe 1.1.0.0.
+This repo contains ~most of~ all the BepInEx 5 plugins I've written for Cowtastic Cafe (Windows, Mac and Linux). This document covers the _recommended_ way to install mods for Cowtastic Cafe 1.1.0.0.
 
 Check [releases](https://github.com/telnetr4/CowtasticMods/releases/latest) for the downloads.
 
@@ -66,6 +66,7 @@ If you encounter any issues with the plugin, try the following steps:
 - Check that BepInEx runs. If `BepInEx/config` does not generate on starting your game, that means BepInEx isn't starting.
 - Check that you have installed the correct version of BepInEx 5 for the OS you are using. These mods have not been tested with BepInEx 6 (if you test them in 6 and they work, let me know).
 - If you are playing a version of Cowtastic Cafe lower than 1.1.0.0, make sure your game has the unstripped DLLs.
+- Check if you extracted _the contents_ of the Bepinex download. For Windows as of Sept 2, 2023, the contents are the `BepInEx` folder and 3 files: `changelog`, `doorstop_config` and `winhttp.dll`. These will be different for Mac or Linux.
 
 # Contact:
 If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet.8242.
