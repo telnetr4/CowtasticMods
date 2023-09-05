@@ -67,6 +67,9 @@ If you encounter any issues with the plugin, try the following steps:
 - Check that you have installed the correct version of BepInEx 5 for the OS you are using. These mods have not been tested with BepInEx 6 (if you test them in 6 and they work, let me know).
 - If you are playing a version of Cowtastic Cafe lower than 1.1.0.0, make sure your game has the unstripped DLLs.
 - Check if you extracted _the contents_ of the Bepinex download. For Windows as of Sept 2, 2023, the contents are the `BepInEx` folder and 3 files: `changelog`, `doorstop_config` and `winhttp.dll`. These will be different for Mac or Linux.
+  On Windows, it should look like this:
+  
+  ![image](https://github.com/telnetr4/CowtasticMods/assets/21324243/df9f6e77-8de1-4e5b-9c68-a91b773a837e)
 
 # Contact:
 If you encounter any issues that you cannot resolve, you can contact me on Discord at telnet.8242.
