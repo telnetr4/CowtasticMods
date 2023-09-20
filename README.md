@@ -19,7 +19,7 @@ The following installation instructions are derivative of the [BepInEx install g
 
 2. Extract the contents into the game root. After you have downloaded the correct game version, extact the contents of the archive into the game folder.
 
-	- On Windows, the game root folder is where the game executable is located.
+	- On Windows, the game root folder is where the game executable (Cowtastic Cafe.exe) is located.
 	- On macOS, the root folder is where the game <Game>.app is located.
   	- On Linux, the game root folder is where the executable <Game>.x86_64 is located.
 
