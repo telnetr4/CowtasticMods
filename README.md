@@ -11,6 +11,7 @@ If you have never installed mods or are setting up a new install of the game, st
 _Cowtastic Cafe 1.1.0.0 includes the unstripped DLLs, so you can skip this step. For instructions on how to install these DLLs for the previous version of Cowtastic Cafe, please refer to the file history for README.md  or the Readme included with the mod you are installing._
 
 ## Install BepInEx
+![image62553](https://github.com/telnetr4/CowtasticMods/assets/21324243/12aed280-6da9-498b-b067-352b3c93facf)
 The following installation instructions are derivative of the [BepInEx install guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html):
 
 1. Download the BepInEx 5 release for your OS from the [BepInEx Github releases](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.21).
@@ -41,10 +42,11 @@ The following installation instructions are derivative of the [BepInEx install g
 		 This should generate a BepInEx configuration file into `BepInEx/config` folder and an initial log file 'BepInEx/LogOutput.txt'.
 
 # Mod Installation:
+![image857](https://github.com/telnetr4/CowtasticMods/assets/21324243/ad15a22a-4d08-4de2-9be3-f11243235e9c)
 You can get pre-compiled versions of the mods from the [releases](https://github.com/telnetr4/CowtasticMods/releases) section of the repo. I would *highly* recommend reading the instructions from the Readme included with the mod. Even though many of the mods are for older versions of Cowtastic Cafe, many of them will still work and are some variation of:
 
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided above or BepInEx's documentation to install it.
-2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory.
+2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory. If asked to replace files you can usually do whatever.
 3. Launch the game and check if the plugin is working properly.
 4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod name) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section. (Note: naming convention may vary depending on who wrote the mod).
 
