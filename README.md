@@ -46,7 +46,7 @@ The following installation instructions are derivative of the [BepInEx install g
 You can get pre-compiled versions of the mods from the [releases](https://github.com/telnetr4/CowtasticMods/releases) section of the repo. I would *highly* recommend reading the instructions from the Readme included with the mod. Even though many of the mods are for older versions of Cowtastic Cafe, many of them will still work and are some variation of:
 
 1. Make sure you have BepInEx 5 installed on your system. If you don't, follow the instructions provided above or BepInEx's documentation to install it.
-2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory. If asked to replace files you can usually do whatever.
+2. Extract the mod's DLLs into the `BepInEx/plugins` folder in your game's directory. If asked to replace files, check the README.txt included with the mod; if it doesn't say anything about replacing files you should be able to do whatever. If you are updating mods, replace all files.
 3. Launch the game and check if the plugin is working properly.
 4. If the config file `telnet.INSERTMODNAMEHERE.cfg` (where `INSERTMODNAMEHERE` is the name or abbreviation of the mod name) appears in `BepInEx/config`, that means it's working! If it doesn't, check the troubleshooting section. (Note: naming convention may vary depending on who wrote the mod).
 
