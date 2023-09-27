@@ -10,7 +10,7 @@ This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 f
 This plugin allows you to control pouring, milking and resetting/submitting drinks using your keyboard.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
 
-This mod has optional SKTools compatability.
+This mod has optional SKTools compatability. If installed, you can press ` to open/close the Sktoolbox console. Possible Sktoolbox console commands are listed under the `help` command.
 
 Installation:
 
@@ -21,7 +21,7 @@ Installation:
 
 Configuration:
 This plugin has configurable settings, located in the BepInEx/config folder. You can modify these settings using a text editor like Notepad or Visual Studio Code.
-The config file is where you can reset keys using Unity Keycodes (http://answers.unity.com/answers/762252/view.html). Hotkeys defaults are currently set to allow one-handed use.
+The config file is where you can reset keys using Unity Keycodes (https://docs.unity3d.com/ScriptReference/KeyCode.html). Hotkeys defaults are currently set to allow one-handed use.
 
 Uninstallation:
 To uninstall the plugin, simply delete the plugin files from the BepInEx/plugins folder in your game's directory.
@@ -37,6 +37,10 @@ If you encounter any issues with the plugin, try the following steps:
 -Check that you have installed the correct version of BepInEx 5.
 
 Changelog:
+0.0.1.2:
+Made it possible to edit the submit key (thank you DefinitelyNotAyaS)
+Added startup toggle config
+Fixed Tutorial mode bug (thank you LaughRobe)
 0.0.1.1:
 Updated to 1.1.0.0 (I did nothing)
 Actually uploaded it to the Github this time.

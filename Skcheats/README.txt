@@ -10,7 +10,7 @@ This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 f
 This plugin allows you to do various cheats.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
 
-This mod REQUIRES SKTools.
+This mod REQUIRES SKTools. Press ` to open/close the Sktoolbox console. Possible Sktoolbox console commands are listed under the 'help' command.
 
 Installation:
 
@@ -37,6 +37,12 @@ If you encounter any issues with the plugin, try the following steps:
 -Check that you have installed the correct version of BepInEx 5.
 
 Changelog:
+0.0.1.2:
+Fixed black screen on Casual mode bug (thanks/sorry to Iceoff and Hurtlocker011)
+
+0.0.1.2:
+Added new cheater showing system
+Added unlock sandbox command
 0.0.1.1:
 Split SKToolboxCC into different tools including SKCheats
 Changed scene recognition

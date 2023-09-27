@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SkToolbox">
-      <HintPath>..\..\Cowtastic Cafe_1.0.0.24 - Dev\BepInEx\plugins\SkToolbox.dll</HintPath>
+      <HintPath>..\..\Cowtastic_Windows_Dev_1.1.0.0\BepInEx\plugins\SkToolbox.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

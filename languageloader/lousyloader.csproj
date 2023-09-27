@@ -1,8 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(SolutionDir)\cowstuff.targets" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath></OutputPath>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SkToolbox">
       <HintPath>..\..\Cowtastic_Windows_Dev_1.1.0.0\BepInEx\plugins\SkToolbox.dll</HintPath>

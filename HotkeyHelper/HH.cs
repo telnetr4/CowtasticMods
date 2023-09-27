@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 using UnityEngine.UI;
 using SkToolbox;
-//TODO: fix ctrl reset
+
 namespace HotKey
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERS)]
@@ -66,7 +66,7 @@ namespace HotKey
             ordermanager.OrderFinished();
         }
 
-        [Command("Hotkeyoverridetoggle", "toggles hotkeys on and off.","Hotkeys")]
+        [Command("Hotkeytoggle", "toggles hotkeys on and off.","Hotkeys")]
         public static void hkot()
         {
             manualhotkeyoverride = !manualhotkeyoverride;
@@ -89,7 +89,10 @@ namespace HotKey
         public static ConfigEntry<string> confighotkeyChocolateSauce;
         public static ConfigEntry<string> confighotkeyreset;
         public static ConfigEntry<string> confighotkeysubmit;
-        public static ConfigEntry<string> Confighotkeymilking;
+        public static ConfigEntry<string> confighotkeymilking;
+
+        public static ConfigEntry<bool> confighotkeyon;
+
 
 
         private void Awake()
@@ -125,8 +128,10 @@ namespace HotKey
             //https://answers.unity.com/questions/762073/c-list-of-string-name-for-inputgetkeystring-name.html
             confighotkeyreset = Config.Bind("Hotkeys", "hotkeyreset", "left ctrl", "Hotkey to reset cup");
             confighotkeysubmit = Config.Bind("Hotkeys", "hotkeysubmit", "space", "Hotkey to submit order");
-            Confighotkeymilking = Config.Bind("Hotkeys", "hotkeymilking", "left shift", "Hotkey to milk Barista");
+            confighotkeymilking = Config.Bind("Hotkeys", "hotkeymilking", "left shift", "Hotkey to milk Barista");
 
+            confighotkeyon = Config.Bind<bool>("Hotkeys", "hotkeysonatstart", true, "Defines whether hotkeys are on at game startup. \"true\" for on \"false\" for off.");
+            manualhotkeyoverride = !confighotkeyon.Value;
             Logger.LogInfo("Got Hotkey binds.");
 
             fcid.Add(Fillings.Milk, confighotkeyMilk.Value);
@@ -191,6 +196,7 @@ namespace HotKey
             return null;
         }
 
+
         private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
             string scenename = arg0.name;
@@ -203,6 +209,12 @@ namespace HotKey
                 //toppingsfillingtooldictionary.Clear();
                 Statics.TextActualTime = "Your Time";
                 Statics.TextMoneyEarned = "Money Earned";
+                return;
+            }
+            if (scenename.Contains("Tutorial"))
+            {
+                Dbgl("tutorial");
+                sceneready = false;
                 return;
             }
             bool ishard = scenename.Contains("Hard");
@@ -243,13 +255,13 @@ namespace HotKey
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && !boolstack)
+            if (Input.GetKeyDown(confighotkeysubmit.Value) && !boolstack)
             {
                 ordermanager.OrderFinished();
                 boolstack = true;
                 return;
             }
-            if (Input.GetKeyDown(Confighotkeymilking.Value) && !boolstack)
+            if (Input.GetKeyDown(confighotkeymilking.Value) && !boolstack)
             {
                 baristamilkinghelper.Invoke("OnMouseDown", 0);
                 boolstack = true;
@@ -263,7 +275,7 @@ namespace HotKey
                 return;
             }
             boolstack = false;
-            if (!Input.GetKeyUp(Confighotkeymilking.Value))
+            if (!Input.GetKeyUp(confighotkeymilking.Value))
                 return;
             baristamilkinghelper.Invoke("OnMouseUp", 0);
         }
