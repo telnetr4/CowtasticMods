@@ -1,16 +1,16 @@
 README.TXT
 
 Plugin Name: SkCheats
-Plugin Version: 0.0.1.1
-Supported Game: Cowtastic Cafe v 1.1.0.0 (Windows 10 x64) with BepInEx 5
+Plugin Version: 0.1.1.1
+Supported Game: Cowtastic Cafe v 1.1.0.1 (Windows 10 x64) with BepInEx 5, but will likely work on other OSes
 Author: "Telnet"
 
 Introduction:
-This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 framework.
+This is a plugin for Cowtastic Cafe v 1.1.0.1 that is powered by the BepInEx 5 framework.
 This plugin allows you to do various cheats.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
 
-This mod REQUIRES SKTools.
+This mod REQUIRES SKTools. Press ` to open/close the Sktoolbox console. Possible Sktoolbox console commands are listed under the 'help' command.
 
 Installation:
 
@@ -37,6 +37,9 @@ If you encounter any issues with the plugin, try the following steps:
 -Check that you have installed the correct version of BepInEx 5.
 
 Changelog:
+0.0.1.2:
+Fixed black screen on Casual mode bug (thank you/sorry to Iceoff and Hurtlocker011)
+Added unlock sandbox command
 0.0.1.1:
 Split SKToolboxCC into different tools including SKCheats
 Changed scene recognition
@@ -46,6 +49,7 @@ Known Bugs:
 -None known
 
 Planned Features (If I ever get to it):
+-finish new cheater showing system
 -more cheats
 -Win cheat
 

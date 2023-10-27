@@ -9,6 +9,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
+// Lovingly ripped off from aedenthorn.CustomMeshes 0.2.3
 
 namespace MeshMash
 {

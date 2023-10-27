@@ -9,6 +9,8 @@ using UnityEngine;
 using System.Collections;
 using System.IO;
 
+// Lovingly ripped off from aedenthorn.CustomMeshes 0.2.3
+
 public class TextureLoader : MonoBehaviour
 {
     public static Texture2D LoadTGA(string fileName)

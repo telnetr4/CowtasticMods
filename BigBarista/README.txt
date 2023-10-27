@@ -10,7 +10,7 @@ This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 f
 This plugin allows you to scale the Barista.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
 
-This mod has optional SKTools compatability.
+This mod has optional SKTools compatability. If installed, you can press ` to open/close the Sktoolbox console. Possible Sktoolbox console commands are listed under the `help` command.
 
 Installation:
 
