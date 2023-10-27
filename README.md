@@ -8,7 +8,7 @@ If you have never installed mods or are setting up a new install of the game, st
 
 # Prereq Installations
 ## ~~Unstripped DLLs (CorLibs)~~
-_Cowtastic Cafe 1.1.0.0 includes the unstripped DLLs, so you can skip this step. For instructions on how to install these DLLs for the previous version of Cowtastic Cafe, please refer to the file history for README.md or the Readme included with the mod you are installing._
+~~_Cowtastic Cafe 1.1.0.0 includes the unstripped DLLs, so you can skip this step. For instructions on how to install these DLLs for the previous version of Cowtastic Cafe, please refer to the file history for README.md or the Readme included with the mod you are installing._~~
 
 ## Install BepInEx
 ![image62553](https://github.com/telnetr4/CowtasticMods/assets/21324243/12aed280-6da9-498b-b067-352b3c93facf)
