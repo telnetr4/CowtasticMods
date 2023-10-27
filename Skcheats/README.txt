@@ -1,7 +1,7 @@
 README.TXT
 
 Plugin Name: SkCheats
-Plugin Version: 0.1.1.1
+Plugin Version: 0.0.1.2
 Supported Game: Cowtastic Cafe v 1.1.0.1 (Windows 10 x64) with BepInEx 5, but will likely work on other OSes
 Author: "Telnet"
 
