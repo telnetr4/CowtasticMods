@@ -1,12 +1,12 @@
 README.TXT
 
 Plugin Name: HotkeyHelper
-Plugin Version: 0.0.1.1
-Supported Game: Cowtastic Cafe v 1.1.0.0 (Windows 10 x64) with BepInEx 5
+Plugin Version: 0.0.1.2
+Supported Game: Cowtastic Cafe v 1.1.0.1 (Windows 10 x64) with BepInEx 5, but will likely work on other OSes
 Author: "Telnet"
 
 Introduction:
-This is a plugin for Cowtastic Cafe v 1.1.0.0 that is powered by the BepInEx 5 framework.
+This is a plugin for Cowtastic Cafe v 1.1.0.1 that is powered by the BepInEx 5 framework.
 This plugin allows you to control pouring, milking and resetting/submitting drinks using your keyboard.
 This plugin is intended for use by players who have a basic understanding of modding and are comfortable with installing and configuring BepInEx 5 plugins.
 
@@ -38,9 +38,9 @@ If you encounter any issues with the plugin, try the following steps:
 
 Changelog:
 0.0.1.2:
-Made it possible to edit the submit key (thank you DefinitelyNotAyaS)
+Made it possible to edit the submit key (thank you/sorry to DefinitelyNotAyaS)
 Added startup toggle config
-Fixed Tutorial mode bug (thank you LaughRobe)
+Fixed Tutorial mode bug (thank you/sorry to LaughRobe)
 0.0.1.1:
 Updated to 1.1.0.0 (I did nothing)
 Actually uploaded it to the Github this time.

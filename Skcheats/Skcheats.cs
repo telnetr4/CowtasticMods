@@ -188,7 +188,7 @@ namespace Skcheats
             GMA.AddMoney(moolah);
         }
 
-        [Command("togglesandbox", "Temporarily toggles the Sandbox mode button. Can only be used on the main menu.", "Archievements")]
+        [Command("togglesandbox", "Temporarily toggles the Sandbox mode button. Can only be used on the main menu.", "Cheats")]
         public static void togglesandcmd()
         {
             if (!checkissceneready(true, true))

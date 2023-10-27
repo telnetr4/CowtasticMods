@@ -25,7 +25,7 @@ namespace HotKey
             PLUGIN_AUTH = "telnet",
             PLUGIN_NAME = "hotkeyhelper",
             PLUGIN_GUID = PLUGIN_AUTH + "." + PLUGIN_NAME,
-            PLUGIN_VERS = "0.0.1.1",
+            PLUGIN_VERS = "0.0.1.2",
             PLUGIN_RECV = "1.1.0.0",
             HARMONY_ID = PLUGIN_GUID + "." + "harmony";
 
